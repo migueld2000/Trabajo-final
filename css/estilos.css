@@ -1,0 +1,246 @@
+:root 
+{
+    --color-titulo:#F80000 ;
+    --color-texto:#000000;
+    --color-menu: #00bb2d ; /* Color primario */
+    --color-nav: #ffffff; /* Color primario */
+    --color-nav-seleccion: hsla(134, 100%, 37%, 0.678); /* Color secundario */
+    --color-secundario:#3e5f8a ;
+    --color-seccion_especiales:#3fcbff;
+}
+
+
+h1,h2,h3,h4,h5,h6
+{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+a,p
+{
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-nav .nav-link 
+{
+  color: white !important;
+}
+.navbar-brand 
+{
+  color: white !important;
+}
+.navbar-toggler 
+{
+  border-color: white !important;
+}
+
+#ESPECIALES
+{
+  background-color: var(--color-seccion_especiales);
+  width: 100%;
+  height: auto;
+  padding: 30px;
+}
+#promociones
+{
+  width: auto;
+  height: 300px;
+  background-color: #8ce0ff;
+  border-radius: 30px 15px;
+
+}
+
+#EVENTOS
+{
+  width: auto;
+  height: 450px;
+  background-color: #8ce0ff;
+  border-radius: 30px 15px;
+  
+}
+
+#promociones, #EVENTOS
+{
+  margin: 0px 50px 10px 0px;
+  
+}
+
+#carta_evento
+{
+  width:500px;
+  height: auto;
+  margin: 10px;
+  border-radius: 15px;
+  font-weight: 350;
+  font-style: normal;
+}
+
+#Menu
+{
+  background-image: url(/img/fondo.png);
+  height: 400px;
+}
+
+#Menu p
+{
+  text-align: center;
+}
+
+#texto_menu
+{
+  border-radius: 5px;
+  width: 120px;
+  align-content: center;
+  text-align: center;
+  margin:10px 620px;
+  background-color: var(--color-secundario);
+  color:var(--color-texto);
+
+}
+/* Estilo para el contenedor colapsable */
+.collapse-horizontal {
+  border: 0.1px solid rgba(105, 105, 105, 0.322);
+  border-radius: 10px;
+  width: 100%; /* Ajusta el ancho del contenedor */
+  overflow-x: auto; /* Permite el scroll horizontal */
+  white-space: nowrap; /* Mantiene las tarjetas en una sola línea */
+  padding: 10px; /* Añadido para mejor espacio interno */
+  transition: height 0.5s ease, width 0.5s ease; /* Controla la velocidad de cierre */
+  backdrop-filter: blur(0.4rem);
+}
+
+/* Estilo para el contenedor de tarjetas */
+#Cafareia
+{
+  text-align: center;
+}
+hr{
+  border: 1px solid;
+}
+.card-container {
+  display: inline-block; /* Asegura que las tarjetas estén en línea */
+}
+
+/* Estilo para las tarjetas */
+.collapse-horizontal .card {
+  display: inline-block;
+  margin: 10px;
+  width: auto; /* Ajusta el ancho de las tarjetas según sea necesario */
+  height: auto;
+  vertical-align: top; /* Alinea las tarjetas en la parte superior */
+  overflow: hidden; /* Evita que el contenido se salga de la tarjeta */
+}
+
+/* Estilo para las imágenes dentro de las tarjetas */
+.collapse-horizontal .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilo para el cuerpo de las tarjetas */
+.collapse-horizontal .card .card-body {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+/*Cafareia*/
+.container {
+  width: auto;
+  height: auto;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.container_tarjeta {
+  margin: 20px;
+  
+}
+
+.container_tarjeta a {
+  display: inline-block;
+}
+.container_tarjeta:hover figure {
+  -webkit-transform: perspective(600px) rotateY(180deg);
+  -ms-transform: perspective(600px) rotateY(180deg);
+  -o-transform: perspective(600px) rotateY(180deg);
+  transform: perspective(600px) rotateY(180deg);
+
+  -webkit-box-shadow: 8px 17px 21px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 17px 21px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 8px 17px 21px 0px rgba(0, 0, 0, 0.75);
+}
+
+.container_tarjeta:hover .figure img {
+  filter: blur(2px);
+}
+.figure {
+  position: relative;
+  transition: all ease 0.5s;
+  transform-style: preserve-3d;
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.figure .frontal,
+.figure .trasera {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transition: all ease 0.5s;
+}
+
+.figure .frontal {
+  display: block;
+  /*backface-visibility: hidden;*/
+}
+
+.figure .trasera {
+  position: absolute;
+  top: 0;
+  padding: 20px;
+  color: #fff;
+  transform: perspective(600px) rotateY(180deg);
+  backface-visibility: hidden;
+  overflow: auto;
+}
+.figure .trasera .titulo {
+  color: #fff;
+  font-weight: normal;
+  margin-bottom: 20px;
+  font-style: 24px;
+}
+.figure .trasera hr {
+  height: 2px;
+  background: #ffff;
+  border: none;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+.figure .trasera p {
+  line-height: 22px;
+  font-size: 14px;
+}
+@media screen and (max-width: 992px) {
+  .figure.trasera {
+    backface-visibility: visible;
+    transform: perspective(600px) rotateY(0deg);
+  }
+  .container_tarjeta .figure {
+    transform: perspective(600px) rotateY(0deg);
+  }
+}
+/*footer*/
+footer
+{
+  width: 100%;
+  height: 250px;
+  background-color: #F80000;
+}
