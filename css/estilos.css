@@ -12,11 +12,6 @@
   --color-footer:#3fab35;
 }
 
-body {
-  cursor: url(../img/espatula.png), auto;
-
-}
-
 h1,
 h2,
 h3,
@@ -115,21 +110,16 @@ svg {
 
 }
 
-.slide-in-left {
-  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
+/*animmacion promociones*/
 @-webkit-keyframes slide-in-left {
   0% {
     -webkit-transform: translateX(-1000px);
-    transform: translateX(-1000px);
+            transform: translateX(-1000px);
     opacity: 0;
   }
-
   100% {
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
     opacity: 1;
   }
 }
@@ -137,17 +127,28 @@ svg {
 @keyframes slide-in-left {
   0% {
     -webkit-transform: translateX(-1000px);
-    transform: translateX(-1000px);
+            transform: translateX(-1000px);
     opacity: 0;
   }
-
   100% {
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
     opacity: 1;
   }
 }
 
+.slide-in-on-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.slide-in-on-scroll.visible {
+  opacity: 1;
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* fin de la animacion*/
 
 #promociones .imagen-port {
   position: relative;
@@ -208,22 +209,16 @@ svg {
   box-shadow: 10px 10px 15px rgb(0, 0, 0);
   color: #fff;
 }
-
-.scale-in-ver-center {
-  -webkit-animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
+/*animacion eventos*/
 @-webkit-keyframes scale-in-ver-center {
   0% {
     -webkit-transform: scaleY(0);
-    transform: scaleY(0);
+            transform: scaleY(0);
     opacity: 1;
   }
-
   100% {
     -webkit-transform: scaleY(1);
-    transform: scaleY(1);
+            transform: scaleY(1);
     opacity: 1;
   }
 }
@@ -231,16 +226,28 @@ svg {
 @keyframes scale-in-ver-center {
   0% {
     -webkit-transform: scaleY(0);
-    transform: scaleY(0);
+            transform: scaleY(0);
     opacity: 1;
   }
-
   100% {
     -webkit-transform: scaleY(1);
-    transform: scaleY(1);
+            transform: scaleY(1);
     opacity: 1;
   }
 }
+
+.scale-in-on-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.scale-in-on-scroll.visible {
+  opacity: 1;
+  -webkit-animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* fin de la animacion*/
 
 #txt_EVENTOS {
 
@@ -491,6 +498,7 @@ svg {
 
 #Menu p {
   text-align: center;
+  color:var(--color-texto);
 }
 
 #texto_menu {
@@ -517,14 +525,51 @@ svg {
 }
 
 /* Estilo para el contenedor de tarjetas */
+/* animacion del menu */
+@-webkit-keyframes slide-left {
+  0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+  }
+  100% {
+      -webkit-transform: translateX(-100px);
+              transform: translateX(-100px);
+  }
+}
 
+@keyframes slide-left {
+  0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+  }
+  100% {
+      -webkit-transform: translateX(-100px);
+              transform: translateX(-100px);
+  }
+}
+
+.slide-left-on-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.slide-left-on-scroll.visible {
+  opacity: 1;
+  -webkit-animation: slide-left 0.5s linear both;
+          animation: slide-left 0.5s linear both;
+}
+
+/* fin de la animacion*/
+
+/* cafeteria */
 
 #tejetas_Cafetreia {
   overflow-x: auto;
 }
 
-hr {
-  border: 1px solid;
+#titulo_cafeteria
+{
+  color:var(--color-texto);
 }
 
 .card-container {
@@ -561,56 +606,6 @@ hr {
   white-space: nowrap;
 }
 
-@media screen and (max-width: 992px) {
-  .figure.trasera {
-    backface-visibility: visible;
-    transform: perspective(600px) rotateY(0deg);
-  }
-
-  .container_tarjeta .figure {
-    transform: perspective(600px) rotateY(0deg);
-  }
-
-  .collapse-horizontal .card {
-    width: 300px;
-    height: auto;
-  }
-}
-
-.slide-left {
-  -webkit-animation: slide-left 0.5s linear both;
-  animation: slide-left 0.5s linear both;
-}
-
-@-webkit-keyframes slide-left {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  100% {
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px);
-  }
-}
-
-@keyframes slide-left {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  100% {
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px);
-  }
-}
-
-
-
-
-
-/* cafeteria */
 #cafetería {
   background: var(--color-seccion_Cafeteria)
 }
@@ -736,3 +731,5 @@ footer {
   background-color: #3fab35;
 
 }
+
+

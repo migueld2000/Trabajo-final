@@ -151,3 +151,81 @@ function scrollToTop() {
     document.body.scrollTop = 0; // Para Safari
     document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
 }
+
+//animacion de promociones
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.slide-in-on-scroll');
+
+    function checkVisibility() {
+        const triggerPoint = window.innerHeight / 1.1; // Ajusta este valor según sea necesario
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < triggerPoint) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Verifica la visibilidad al cargar la página
+});
+
+//animacion de eventos
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.scale-in-on-scroll');
+
+    function checkVisibility() {
+        const triggerPoint = window.innerHeight / 1.1; // Ajusta este valor según sea necesario
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < triggerPoint) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Verifica la visibilidad al cargar la página
+});
+
+
+//animacion de menu
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.slide-left-on-scroll');
+
+    function checkVisibility() {
+        const triggerPoint = window.innerHeight / 1.1; // Ajusta este valor según sea necesario
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < triggerPoint) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    function adjustPosition() {
+        elements.forEach(element => {
+            if (element.classList.contains('visible')) {
+                const buttons = element.querySelectorAll('button');
+                const secondButton = buttons[1];
+                const screenWidth = window.innerWidth;
+                const secondButtonWidth = secondButton.offsetWidth;
+
+                // Calcular la posición para centrar el segundo botón
+                const translateX = (screenWidth - secondButtonWidth) / 2 - secondButton.getBoundingClientRect().left;
+                element.style.transform = `translateX(${translateX}px)`;
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', adjustPosition);
+    checkVisibility(); // Verifica la visibilidad al cargar la página
+});
