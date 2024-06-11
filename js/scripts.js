@@ -1,27 +1,153 @@
-//nav
-function closeOtherCollapses(collapseId) {
-    // Obtener todos los collapse que están abiertos
-    var collapses = document.querySelectorAll('.collapse.show');
+//animacion de evntos
 
-    // Iterar sobre ellos y cerrarlos, excepto el collapse que se está abriendo
-    for (var i = 0; i < collapses.length; i++) {
-        var collapse = collapses[i];
-        if (collapse.id !== collapseId) {
-            $(collapse).collapse('hide');
-        }
-    }
-}
+
 //menu 
 function closeOtherCollapses(openId) {
     var collabsibles = ['collapseDesayuno', 'collapseAlmuerzos', 'collapseComidas'];
-    collabsibles.forEach(function(id) {
+    collabsibles.forEach(function (id) {
         if (id !== openId) {
             var element = document.getElementById(id);
             var bsCollapse = new bootstrap.Collapse(element, {
                 toggle: false
             });
             bsCollapse.hide();
-            element.style.transition = 'height 0.5s ease, width 0.5s ease';
+            element.style.transition = 'height 0.1s ease, width 0.1s ease';
         }
     });
+}
+
+//boton de scroll
+function closeOtherCollapses(currentId) {
+    const collapses = ['collapseDesayuno', 'collapseAlmuerzos', 'collapseComidas'];
+    collapses.forEach(id => {
+        if (id !== currentId) {
+            const element = document.getElementById(id);
+            if (element.classList.contains('show')) {
+                new bootstrap.Collapse(element, {
+                    toggle: false
+                }).hide();
+            }
+        }
+    });
+}
+
+// Scroll to top button
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scrollToTopBtn").style.display = "block";
+    } else {
+        document.getElementById("scrollToTopBtn").style.display = "none";
+    }
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+//calendario
+
+var monthName = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+    "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+var now = new Date();
+var day = now.getDate();
+var month = now.getMonth();
+var currentMonth = month;
+var year = now.getFullYear();
+
+
+initCalender();
+console.log(startDay());
+
+function initCalender() {
+    $("#text_day").text(day);
+    $("#text_month").text(monthName[currentMonth]);
+
+    $("#text_month_02").text(monthName[month]);
+    $("#text_year").text(year);
+
+    $(".item_day").remove();
+
+    for (let i = startDay(); i > 0; i--) {
+        $(".container_days").append
+            (`<span class="week_days_item item_day prev_days">${getTotalDays(month - 1) - (i - 1)}</span>`);
+    }
+
+    for (let i = 1; i <= getTotalDays(month); i++) {
+        if (i == day && month == currentMonth) {
+            $(".container_days").append
+                (`<span class="week_days_item item_day today">${i}</span>`);
+        } else {
+            $(".container_days").append
+                (`<span class="week_days_item item_day">${i}</span>`);
+        }
+    }
+}
+function getNextMonth() {
+    if (month !== 11) {
+        month++;
+    } else {
+        year++;
+        month = 0;
+    }
+    initCalender();
+}
+function getPrevMonth() {
+    if (month !== 0) {
+        month--;
+    } else {
+        year--;
+        month = 11;
+    }
+    initCalender();
+}
+function startDay() {
+    var start = new Date(year, month, 1);
+    return ((start.getDate() - 1) === -1) ? 6 : start.getDay();
+}
+
+function leapMonth() {
+    return ((year % 400 === 0) || (year % 4 === 0) && (year % 100 !== 0));
+}
+
+function getTotalDays() {
+    if (month === -1) month = 11;
+
+    var numMonthReal = month + 1;
+
+    if (numMonthReal == 3 || numMonthReal == 5 || numMonthReal == 8 || numMonthReal == 10) {
+        return 31;
+    } else if (numMonthReal == 0 || numMonthReal == 2 || numMonthReal == 4 || numMonthReal == 6
+        || numMonthReal == 7 || numMonthReal == 9 || numMonthReal == 10) {
+        return 30;
+    } else {
+        return leapMonth() ? 29 : 28;
+    }
+}
+
+$("#next_month").click(function () {
+    getNextMonth();
+});
+$("#last_month").click(function () {
+    getPrevMonth();
+})
+
+//galeria animada
+
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scrollToTopBtn").style.display = "block";
+    } else {
+        document.getElementById("scrollToTopBtn").style.display = "none";
+    }
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0; // Para Safari
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
 }
