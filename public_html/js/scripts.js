@@ -65,20 +65,26 @@ function closeOtherCollapses(currentId) {
 }
 
 // Scroll to top button
-window.onscroll = function () { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("scrollToTopBtn").style.display = "block";
-    } else {
-        document.getElementById("scrollToTopBtn").style.display = "none";
-    }
-}
-
+// Función para scroll hacia arriba
 function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Agregar evento de click al botón
+document.getElementById('scroll-to-top').addEventListener('click', scrollToTop);
+
+// Agregar evento de scroll para mostrar o esconder el botón
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const scrollButton = document.getElementById('scroll-to-top');
+
+    if (scrollPosition > 200) {
+        scrollButton.classList.add('show');
+    } else {
+        scrollButton.classList.remove('show');
+    }
+});
+
 
 //calendario
 
@@ -168,20 +174,4 @@ $("#last_month").click(function () {
     getPrevMonth();
 })
 
-//galeria animada
-
-window.onscroll = function () { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("scrollToTopBtn").style.display = "block";
-    } else {
-        document.getElementById("scrollToTopBtn").style.display = "none";
-    }
-}
-
-function scrollToTop() {
-    document.body.scrollTop = 0; // Para Safari
-    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
-}
 

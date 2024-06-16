@@ -203,7 +203,8 @@ svg {
 }
 
 #promociones .imagen-port:hover .hover-galeria {
-  opacity: 1;
+  opacity:3;
+  background-color: #000000a8;
 }
 
 #promociones .hover-galeria img {
@@ -682,26 +683,6 @@ svg {
 
 }
 
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #ffffff00;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 100px 100px 100px 100px;
-}
-
-#scrollToTopBtn:hover {
-  background-color: var(--color-secundario);
-}
-
 /*footer*/
 footer {
   width: 100%;
@@ -710,5 +691,23 @@ footer {
   color: var(--color-texto);
 
 }
+
+/* Estilos del botón */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.scroll-to-top:hover {
+  background-color: #555;
+}
+
 
 
