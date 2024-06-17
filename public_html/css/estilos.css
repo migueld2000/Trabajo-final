@@ -692,6 +692,31 @@ footer {
 
 }
 
+footer a img
+{
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+footer #caja_texto
+{
+  margin: 0px 0px 0px 50px;
+  width: 500px;
+}
+footer #caja_texto button
+{
+  background: var(--color-Botones);
+}
+
+#mapa, iframe
+{
+  width:300px; 
+  height:300px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px;
+}
+
 /* Estilos del botón */
 .scroll-to-top {
   position: fixed;
