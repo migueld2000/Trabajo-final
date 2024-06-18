@@ -717,6 +717,17 @@ footer #caja_texto button
   box-shadow: 10px 10px 10px;
 }
 
+@media screen and (max-width: 992px) {
+  footer #mapa
+  {
+    margin: 0px 0px 20px 60px;
+    align-items: center;
+  }
+
+}
+
+
+
 /* Estilos del botón */
 .scroll-to-top {
   position: fixed;
