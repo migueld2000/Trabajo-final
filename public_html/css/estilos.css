@@ -230,15 +230,17 @@ svg {
   height: auto;
   background-color: #fff;
   border-radius: 30px 15px;
-  margin: 10px;
+  margin: 10px 0px 0px 0px;
   box-shadow: 10px 10px 15px rgb(0, 0, 0);
   color: var(--color-texto);
+  padding: 0px;
 }
 
 
 #txt_EVENTOS {
 
-  margin: 50px;
+  margin:50px 0px 0px 0px;
+  
 }
 
 /*calendario*/
