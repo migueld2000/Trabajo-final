@@ -55,9 +55,6 @@ svg {
   height: auto;
 }
 
-svg {
-  border-color: #fff;
-}
 
 .custom-shape-divider-bottom-1718035266 {
   position: absolute;
@@ -79,6 +76,18 @@ svg {
 .custom-shape-divider-bottom-1718035266 .shape-fill {
   fill: #FFFFFF;
 
+}
+
+@media (max-width: 992px) {
+
+  #tarjeta_principal
+  {
+    height: 200px;
+  }
+  .carousel-inner img 
+  {
+    height: 200px;
+  }
 }
 
 /*blog*/
@@ -138,7 +147,7 @@ svg {
   #contenidos {
     width: 100%;
     height: 400px;
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 20px;
     padding:10px 20px 20px 20px;
     overflow: auto;
   }
@@ -231,7 +240,7 @@ svg {
 
 #EVENTOS {
   width: auto;
-  height: auto;
+  height: 525px;
   background-color: #fff;
   border-radius: 30px 15px;
   margin: 10px 0px 0px 0px;
@@ -473,13 +482,19 @@ svg {
 
 
 
-#carta_evento {
+#txt_EVENTOS {
   border-radius: 15px;
   font-weight: 350;
   font-style: normal;
 }
 
+@media (max-width: 992px) {
 
+  #txt_EVENTOS
+  {
+    margin: 0px 0px 0px 50px;
+  }
+}
 
 
 /*menu*/
