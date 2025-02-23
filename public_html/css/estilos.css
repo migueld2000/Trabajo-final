@@ -147,7 +147,7 @@ svg {
   #contenidos {
     width: 100%;
     height: 400px;
-    margin: 20px 0px 20px 20px;
+    margin: 20px 0px 20px 50px;
     padding:10px 20px 20px 20px;
     overflow: auto;
   }
@@ -253,6 +253,9 @@ svg {
 #txt_EVENTOS {
 
   margin:50px 0px 0px 0px;
+  border-radius: 15px;
+  font-weight: 350;
+  font-style: normal;
   
 }
 
@@ -480,15 +483,18 @@ svg {
   vertical-align: middle;
 }
 
-
-
-#txt_EVENTOS {
-  border-radius: 15px;
-  font-weight: 350;
-  font-style: normal;
-}
-
 @media (max-width: 992px) {
+
+  .header_calendar,.container_details, .body_calendar
+  {
+    width: 250px;
+  }
+
+  #EVENTOS
+  {
+    height: 1000px;
+  }
+  
 
   #txt_EVENTOS
   {
@@ -739,12 +745,44 @@ footer #formurario iframe
 }
 
 @media screen and (max-width: 992px) {
+  footer
+  {
+    height: 1090px;
+  }
+
   footer #mapa
   {
-    margin: 0px 0px 20px 60px;
+    margin: 0px 0px 20px 0px;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+  }
+
+  footer map
+  {
+    width: 300px;
+    height: 300px;
+    align-items: center;
+  }
+  footer #formurario
+  {
+    align-items: center;
+    width: 300px;
+    height: 300px;
+  }
+
+  footer #forms
+  {
+    width: 300px;
+    height: 500px;
     align-items: center;
   }
 
+  footer .Dq4amc
+  {
+    width: 300px;
+    height: 500px;
+  }
 }
 
 
